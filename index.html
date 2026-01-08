@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wayanad Living – Hotels, Homes & Daily Life</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">🌿 Wayanad Living</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Hotels</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Real Estate</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Offers</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Updates</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- OFFER SLIDE BAR -->
+<div class="offer-bar">
+  <div class="offer-track">
+    <span>🔥 Weekend Offer: 20% OFF on Wayanad Resorts</span>
+    <span>🏡 New Villa for Sale in Kalpetta – ₹85 Lakhs</span>
+    <span>🌿 Luxury Forest Stay from ₹4,999 only</span>
+    <span>🎉 Festival Special Deals Available Now</span>
+  </div>
+</div>
+
+
+<!-- HERO -->
+<section class="hero-section d-flex align-items-center">
+  <div class="container text-center text-white">
+    <h1 class="display-4 fw-bold">Live the Beauty of Wayanad</h1>
+    <p class="lead">Hotels • Resorts • Real Estate • Daily Updates</p>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search hotels, homes, offers">
+          <button class="btn btn-success" onclick="searchNow()">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAYANAD TODAY SLIDER -->
+<div class="row justify-content-center mt-4">
+  <div class="col-md-8 col-lg-6">
+
+    <div class="wayanad-today-box" id="todayBox">
+
+      <!-- HEADER -->
+      <div class="today-header d-flex justify-content-between align-items-center">
+        <div class="today-title">
+          <span class="live-badge">LIVE</span>
+          <span id="todayDate"></span>
+        </div>
+
+        <!-- LANGUAGE TOGGLE -->
+        <button class="btn btn-sm btn-outline-light" onclick="toggleLang()">
+          🌐 EN | ML
+        </button>
+      </div>
+
+      <!-- SLIDER -->
+      <div id="wayanadTodayCarousel"
+           class="carousel slide"
+           data-bs-ride="carousel"
+           data-bs-interval="3000"
+           data-bs-pause="hover">
+
+        <div class="carousel-inner text-center">
+
+          <div class="carousel-item active" data-type="rain">
+            🌧️ Rain alert in Vythiri & Mananthavady
+          </div>
+
+          <div class="carousel-item" data-type="event">
+            🎉 Local festival at Mananthavady Town
+          </div>
+
+          <div class="carousel-item" data-type="warning">
+            🚧 Traffic advisory – Ghat Road
+          </div>
+
+          <div class="carousel-item" data-type="normal">
+            🏞️ Tourist rush expected today
+          </div>
+
+          <div class="carousel-item" data-type="normal">
+            🌿 Perfect weather for sightseeing
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- RESORT OFFERS SLIDER -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="mb-4 text-center">🔥 Today’s Resort Offers</h2>
+
+    <div id="resortOfferCarousel"
+         class="carousel slide"
+         data-bs-ride="carousel"
+         data-bs-interval="3500">
+
+      <div class="carousel-inner">
+
+        <!-- SLIDE 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/resort1.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5>Mountain View Resort</h5>
+                  <p class="text-success fw-bold">₹4,999 / Night</p>
+                  <span class="badge bg-success">Weekend Offer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/resort2.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5>Forest Luxury Stay</h5>
+                  <p class="text-success fw-bold">₹6,500 / Night</p>
+                  <span class="badge bg-warning text-dark">20% OFF</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/resort3.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5>Vythiri Nature Resort</h5>
+                  <p class="text-success fw-bold">₹5,200 / Night</p>
+                  <span class="badge bg-info">Limited Time</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/resort4.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5>Tea Garden Retreat</h5>
+                  <p class="text-success fw-bold">₹5,800 / Night</p>
+                  <span class="badge bg-danger">Hot Deal</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/resort5.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5>Hilltop Resort</h5>
+                  <p class="text-success fw-bold">₹4,200 / Night</p>
+                  <span class="badge bg-success">Best Value</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/resort6.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5>Eco Forest Stay</h5>
+                  <p class="text-success fw-bold">₹3,900 / Night</p>
+                  <span class="badge bg-warning text-dark">Eco Deal</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/resort7.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5>Luxury Pool Villa</h5>
+                  <p class="text-success fw-bold">₹7,200 / Night</p>
+                  <span class="badge bg-danger">Premium</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/resort8.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5>Mist Valley Resort</h5>
+                  <p class="text-success fw-bold">₹5,100 / Night</p>
+                  <span class="badge bg-info">New Listing</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CONTROLS -->
+      <button class="carousel-control-prev" type="button"
+              data-bs-target="#resortOfferCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button"
+              data-bs-target="#resortOfferCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOD OFFERS SLIDER -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="mb-4 text-center">🔥 Wayanad Food Offers</h2>
+
+    <div id="foodOfferCarousel"
+         class="carousel slide"
+         data-bs-ride="carousel"
+         data-bs-interval="3500">
+
+      <div class="carousel-inner">
+
+        <!-- SLIDE 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/food1.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                  <h5>Kerala Sadya</h5>
+                  <p class="text-success fw-bold">₹199</p>
+                  <span class="badge bg-success">Lunch Offer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/food2.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                  <h5>Malabar Biriyani</h5>
+                  <p class="text-success fw-bold">15% OFF</p>
+                  <span class="badge bg-warning text-dark">Today Only</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/food3.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                  <h5>Tea + Snacks</h5>
+                  <p class="text-success fw-bold">₹99</p>
+                  <span class="badge bg-info">Evening</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/food4.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                  <h5>Arabian Alfaham</h5>
+                  <p class="text-success fw-bold">₹499</p>
+                  <span class="badge bg-danger">Hot Deal</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/food5.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                  <h5>Breakfast Combo</h5>
+                  <p class="text-success fw-bold">₹149</p>
+                  <span class="badge bg-success">Morning</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/food6.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                  <h5>Porotta + Beef</h5>
+                  <p class="text-success fw-bold">₹179</p>
+                  <span class="badge bg-warning text-dark">Dinner</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/food7.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                  <h5>Ghee Roast</h5>
+                  <p class="text-success fw-bold">₹139</p>
+                  <span class="badge bg-info">Special</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card shadow">
+                <img src="images/food8.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                  <h5>Fried Rice</h5>
+                  <p class="text-success fw-bold">₹159</p>
+                  <span class="badge bg-danger">Chef Choice</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CONTROLS -->
+      <button class="carousel-control-prev"
+              type="button"
+              data-bs-target="#foodOfferCarousel"
+              data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next"
+              type="button"
+              data-bs-target="#foodOfferCarousel"
+              data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- VEHICLE SELLING SLIDER -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="mb-4 text-center">🚗 Vehicles for Sale in Wayanad</h2>
+
+    <div id="vehicleCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- SLIDE 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4 justify-content-center">
+
+            <!-- Vehicle 1 -->
+            <div class="col-md-4">
+              <div class="card shadow">
+                <img src="images/car1.jpg" class="card-img-top" alt="Hyundai Creta">
+                <div class="card-body">
+                  <h5>Hyundai Creta</h5>
+                  <p class="text-success fw-bold">₹9.5 Lakhs</p>
+                  <ul class="list-unstyled small">
+                    <li>📍 Kalpetta</li>
+                    <li>📅 2020 Model</li>
+                    <li>⛽ Diesel</li>
+                    <li>📏 45,000 km</li>
+                  </ul>
+                  <a href="#" class="btn btn-success w-100">Contact Seller</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vehicle 2 -->
+            <div class="col-md-4">
+              <div class="card shadow">
+                <img src="images/bike1.jpg" class="card-img-top" alt="Royal Enfield">
+                <div class="card-body">
+                  <h5>Royal Enfield Classic 350</h5>
+                  <p class="text-success fw-bold">₹1.65 Lakhs</p>
+                  <ul class="list-unstyled small">
+                    <li>📍 Sultan Bathery</li>
+                    <li>📅 2021 Model</li>
+                    <li>⛽ Petrol</li>
+                    <li>📏 18,000 km</li>
+                  </ul>
+                  <a href="#" class="btn btn-success w-100">Contact Seller</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vehicle 3 -->
+            <div class="col-md-4">
+              <div class="card shadow">
+                <img src="images/car2.jpg" class="card-img-top" alt="Innova Crysta">
+                <div class="card-body">
+                  <h5>Toyota Innova Crysta</h5>
+                  <p class="text-success fw-bold">₹14.8 Lakhs</p>
+                  <ul class="list-unstyled small">
+                    <li>📍 Mananthavady</li>
+                    <li>📅 2019 Model</li>
+                    <li>⛽ Diesel</li>
+                    <li>📏 62,000 km</li>
+                  </ul>
+                  <a href="#" class="btn btn-success w-100">Contact Seller</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="carousel-item">
+          <div class="row g-4 justify-content-center">
+
+            <div class="col-md-4">
+              <div class="card shadow">
+                <img src="images/bike2.jpg" class="card-img-top" alt="Activa">
+                <div class="card-body">
+                  <h5>Honda Activa 6G</h5>
+                  <p class="text-success fw-bold">₹78,000</p>
+                  <ul class="list-unstyled small">
+                    <li>📍 Vythiri</li>
+                    <li>📅 2022 Model</li>
+                    <li>⛽ Petrol</li>
+                    <li>📏 9,000 km</li>
+                  </ul>
+                  <a href="#" class="btn btn-success w-100">Contact Seller</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card shadow">
+                <img src="images/car3.jpg" class="card-img-top" alt="Swift">
+                <div class="card-body">
+                  <h5>Maruti Swift</h5>
+                  <p class="text-success fw-bold">₹6.2 Lakhs</p>
+                  <ul class="list-unstyled small">
+                    <li>📍 Kalpetta</li>
+                    <li>📅 2018 Model</li>
+                    <li>⛽ Petrol</li>
+                    <li>📏 55,000 km</li>
+                  </ul>
+                  <a href="#" class="btn btn-success w-100">Contact Seller</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CONTROLS -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#vehicleCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#vehicleCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- DAILY UPDATES -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="mb-4 text-center">📰 Daily Updates</h2>
+    <ul class="list-group">
+      <li class="list-group-item">🌧️ Rain alert issued in Wayanad</li>
+      <li class="list-group-item">🏞️ Tourist rush expected this weekend</li>
+      <li class="list-group-item">🎉 Local festival at Mananthavady</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-success text-white text-center py-4">
+  <p class="mb-0">© 2025 Wayanad Living | Powered by Cloudflare</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

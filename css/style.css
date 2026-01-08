@@ -1,0 +1,129 @@
+/* OFFER SLIDE BAR */
+.offer-bar {
+  background: #0d6efd;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  position: sticky;
+  top: 56px; /* height of navbar */
+  z-index: 999;
+}
+
+.offer-track {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollOffer 20s linear infinite;
+}
+
+.offer-track span {
+  display: inline-block;
+  margin-right: 60px;
+  font-weight: 500;
+}
+
+@keyframes scrollOffer {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.card img {
+  height: 220px;
+  object-fit: cover;
+}
+/* WAYANAD TODAY – HERO SLIDER */
+.wayanad-today-box {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+.today-title {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  color: #ffd966;
+}
+
+.wayanad-today-box .carousel-item {
+  font-size: 15px;
+  min-height: 32px;
+}
+
+/* Mobile optimization */
+@media (max-width: 576px) {
+  .wayanad-today-box {
+    padding: 12px;
+  }
+  .wayanad-today-box .carousel-item {
+    font-size: 14px;
+  }
+}
+.card img {
+  height: 190px;
+  object-fit: cover;
+}
+/* WAYANAD TODAY BOX */
+.wayanad-today-box {
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  color: #fff;
+}
+
+/* HEADER */
+.today-header {
+  margin-bottom: 6px;
+}
+
+.today-title {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* LIVE BADGE */
+.live-badge {
+  background: red;
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: .4; }
+  100% { opacity: 1; }
+}
+
+/* SLIDE TEXT */
+.wayanad-today-box .carousel-item {
+  font-size: 15px;
+  min-height: 34px;
+}
+
+/* ALERT COLORS */
+.carousel-item[data-type="rain"] {
+  color: #4fc3f7;
+}
+
+.carousel-item[data-type="warning"] {
+  color: #ff9800;
+}
+
+.carousel-item[data-type="event"] {
+  color: #ffd54f;
+}
+
+.carousel-item[data-type="normal"] {
+  color: #ffffff;
+}
+
