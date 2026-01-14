@@ -2,16 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Wayanad Living – Hotels, Homes & Daily Life</title>
+
+  <!-- BASIC SEO -->
+  <title>Wayanad Living | Hotels, Resorts, Real Estate & Daily Updates</title>
+  <meta name="description" content="Wayanad Living – Find hotels, resorts, real estate, vehicles, food offers and daily updates in Wayanad. Contact directly via WhatsApp.">
+  <meta name="keywords" content="Wayanad hotels, Wayanad resorts, Wayanad real estate, Wayanad villas, Wayanad land for sale, Wayanad vehicles, Wayanad food offers">
+  <meta name="author" content="Wayanad Living">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap CSS Test-->
+  <!-- OPEN GRAPH (Facebook, WhatsApp) -->
+  <meta property="og:title" content="Wayanad Living – Hotels, Real Estate & Daily Life">
+  <meta property="og:description" content="Explore resorts, real estate, vehicles and daily offers in Wayanad.">
+  <meta property="og:image" content="https://wayanad.pages.dev/images/og-image.jpg">
+  <meta property="og:url" content="https://wayanad.pages.dev">
+  <meta property="og:type" content="website">
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wayanad Living">
+  <meta name="twitter:description" content="Your one-stop platform for Wayanad hotels, homes, offers and updates.">
+  <meta name="twitter:image" content="https://wayanad.pages.dev/images/og-image.jpg">
+
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://wayanad.pages.dev">
+
+  <!-- BOOTSTRAP -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
+  <!-- CUSTOM CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
@@ -42,77 +63,43 @@
 </div>
 
 
-<!-- HERO -->
-<section class="hero-section d-flex align-items-center">
-  <div class="container text-center text-white">
-    <h1 class="display-4 fw-bold">Live the Beauty of Wayanad</h1>
-    <p class="lead">Hotels • Resorts • Real Estate • Daily Updates</p>
+<!-- HERO VIDEO SECTION -->
+<section class="video-hero">
 
-    <div class="row justify-content-center mt-4">
-      <div class="col-md-6">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search hotels, homes, offers">
-          <button class="btn btn-success" onclick="searchNow()">Search</button>
-        </div>
+  <video autoplay muted loop playsinline>
+    <source src="assets/video/wayanad-bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- DARK OVERLAY -->
+  <div class="video-overlay"></div>
+
+  <!-- CONTENT OVER VIDEO -->
+  <div class="video-content text-center text-white">
+
+    <h1 class="fw-bold">Wayanad Living</h1>
+    <p id="todayDate" class="mb-3"></p>
+
+    <!-- NEWS CAROUSEL -->
+    <div id="wayanadTodayCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">🌧️ Rain alert in Vythiri & Mananthavady</div>
+        <div class="carousel-item">🎉 Local festival at Mananthavady Town</div>
+        <div class="carousel-item">🚧 Traffic advisory – Ghat Road</div>
+        <div class="carousel-item">🏞️ Tourist rush expected today</div>
+        <div class="carousel-item">🌿 Perfect weather for sightseeing</div>
       </div>
     </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="mt-4">
+      <button class="btn btn-warning me-2" onclick="toggleLang()">🌐 Language</button>
+      <button class="btn btn-light" onclick="searchNow()">🔍 Search</button>
+    </div>
+
   </div>
 </section>
 
-<!-- WAYANAD TODAY SLIDER -->
-<div class="row justify-content-center mt-4">
-  <div class="col-md-8 col-lg-6">
-
-    <div class="wayanad-today-box" id="todayBox">
-
-      <!-- HEADER -->
-      <div class="today-header d-flex justify-content-between align-items-center">
-        <div class="today-title">
-          <span class="live-badge">LIVE</span>
-          <span id="todayDate"></span>
-        </div>
-
-        <!-- LANGUAGE TOGGLE -->
-        <button class="btn btn-sm btn-outline-light" onclick="toggleLang()">
-          🌐 EN | ML
-        </button>
-      </div>
-
-      <!-- SLIDER -->
-      <div id="wayanadTodayCarousel"
-           class="carousel slide"
-           data-bs-ride="carousel"
-           data-bs-interval="3000"
-           data-bs-pause="hover">
-
-        <div class="carousel-inner text-center">
-
-          <div class="carousel-item active" data-type="rain">
-            🌧️ Rain alert in Vythiri & Mananthavady
-          </div>
-
-          <div class="carousel-item" data-type="event">
-            🎉 Local festival at Mananthavady Town
-          </div>
-
-          <div class="carousel-item" data-type="warning">
-            🚧 Traffic advisory – Ghat Road
-          </div>
-
-          <div class="carousel-item" data-type="normal">
-            🏞️ Tourist rush expected today
-          </div>
-
-          <div class="carousel-item" data-type="normal">
-            🌿 Perfect weather for sightseeing
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 
 <!-- RESORT OFFERS SLIDER -->
@@ -134,7 +121,7 @@
               <div class="card shadow">
                 <a href="https://wa.me/919947230840?text=Hi%20I%20am%20interested%20in%20Mountain%20View%20Resort"
                 target="_blank">
-                <img src="images/resort1.jpg" class="card-img-top">
+                <img src="images/resort1.jpg" alt="Mountain View Resort in Wayanad">
                 </a>
                 <div class="card-body">
                   <h5>Mountain View Resort</h5>
